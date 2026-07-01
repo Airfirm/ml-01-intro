@@ -132,3 +132,9 @@ dtype: int64
 2026-06-30 19:48:36 | INFO | M01 | Problem type:      classification (we want to predict a category)
 2026-06-30 19:48:36 | INFO | M01 | Candidate features: ['island', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g', 'sex']
 2026-06-30 19:48:36 | INFO | M01 | ========================
+2026-06-30 20:01:57 | INFO | ML | Workflow complete
+2026-06-30 20:01:57 | INFO | ML | IMPORTANT: This script creates chart windows.
+2026-06-30 20:01:57 | INFO | ML | Close chart windows and terminate this process with CTRL+c as needed.
+2026-06-30 20:01:57 | INFO | ML | ========================
+2026-06-30 20:01:57 | INFO | ML | Executed successfully!
+2026-06-30 20:01:57 | INFO | ML | ========================
