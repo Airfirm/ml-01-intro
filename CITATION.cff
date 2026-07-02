@@ -21,8 +21,13 @@ authors:
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
 
-repository-code: "https://github.com/denisecase/ml-01-intro"
-url: "https://github.com/denisecase/ml-01-intro"
+  - family-names: Oluwafemi
+    given-names: Salawu
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+repository-code: "https://github.com/Airfirm/ml-01-intro"
+url: "https://github.com/Airfirm/ml-01-intro"
 license: MIT
 
 abstract: >
