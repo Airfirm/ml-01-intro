@@ -116,7 +116,7 @@ These tools and techniques could be applied to many real-world prediction proble
 For example, a similar workflow could be used to predict house prices, student grades, sales totals, customer spending, or employee performance based on related input features.
 
 ![hours_studied_vs_score_femi](image.png)
-![model_coefficients_femi](image-1.png)
+![model_coefficients_femi](image-3.png)
 ![prior_score_vs_score_femi](image-2.png)
 
 ---
