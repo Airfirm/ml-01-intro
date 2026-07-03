@@ -1,217 +1,273 @@
 # ml-01-intro
 
-[![Workflow Guide](https://img.shields.io/badge/Pro--Guide-pro--analytics--02-green)](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-[![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](./pyproject.toml)
-[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
-
-> Professional Python project: characterizing machine learning.
+> Professional Python project: Introduction to machine learning problem types and supervised regression.
 
 ## Project Description
 
-This project focuses on learning to find good data problems in a dataset,
-and learning when machine learning (ML) might be helpful.
+This project focuses on learning how to identify a good machine learning problem in a dataset.
+It introduces the difference between supervised and unsupervised learning, and it shows how to choose a target feature for prediction.
 
-We learn to characterize:
+In this project, I worked with a supervised regression example. The model uses student-related features to predict a final score.
 
-- supervised (when we pick a target to predict)
-- unsupervised (no target, just exploring, e.g. clustering)
+The target feature is:
 
-In this project, we pick a dataset and a target.
+* `score`
 
-If the target is:
+The input features are:
 
-- a discrete category column, we know it is a classification problem
-- a continuous numeric column, we know it is a regression problem.
+* `hours_studied`
+* `practice_quizzes`
+* `attendance_pct`
+* `sleep_hours`
+* `prior_score`
 
-Some numbers are actually categories, for example a rating of 1, 2, 3.
-May be better characterized as a category / discrete variable.
+Because the target value `score` is numeric, this is a regression problem.
 
-## Example Notebook + Your Notebook
+## GitHub Repository
 
-Keep the example notebook as it is.
-Either copy it or use it to build a new notebook that ends in _yourname.
-See [docs/your-files.md] for more.
+[https://github.com/Airfirm/ml-01-intro]
 
-Links:
+## Hosted Documentation
 
-- [ml_01_case.ipynb](notebooks/ml_01_case.ipynb)
+[https://airfirm.github.io/ml-01-intro/]
 
-## Working Files
+## Links to Project Files
 
-You'll work with these areas:
+[https://github.com/Airfirm/ml-01-intro/blob/main/src/mlstudio/app_femi.py]
+[https://github.com/Airfirm/ml-01-intro/blob/main/tests/test_app_femi.py]
+[https://github.com/Airfirm/ml-01-intro/blob/main/notebooks/ml_01_femi.ipynb]
 
-- **data/raw** - raw data for exploration (only if you add a dataset)
-- **docs/** - project narrative and documentation
-- **src/mlstudio/** - the app is an example; run only (no need to modify)
-- **notebooks/** - interactive analysis
-- **pyproject.toml** - update authorship & links
-- **zensical.toml** - update authorship & links
+## Project Files
 
-## Instructions (pro-analytics-02)
+Important files and folders used in this project include:
 
-Follow the
-[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to complete:
+* `README.md` - main project landing page
+* `docs/` - additional project documentation
+* `docs/index.md` - project narrative and results
+* `docs/project-instructions.md` - project workflow instructions
+* `docs/your-files.md` - instructions for naming and creating custom files
+* `docs/images/` - saved chart images
+* `data/raw/hours_scores_femi.csv` - raw dataset used in my modified project
+* `src/mlstudio/app_femi.py` - my modified Python app
+* `tests/test_app_femi.py` - smoke test for my app
+* `project.log` - log file created when the project runs
 
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-4. Phase 4. **Modify**
-5. Phase 5. **Apply** <mark>(optional for Module 1)</mark>
+## Dataset
 
-**Completing Phases 1-4 is the goal for Module 1.**
-Phase 5 is optional in Module 1.
-If your environment is working well and you still have some time, you might try it.
+The dataset used in my modified project is:
 
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
-
-## Success
-
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-with the example notebook executed and committed,
-and running the example module will print out:
-
-```shell
-========================
-Executed successfully!
-========================
+```text
+data/raw/hours_scores_femi.csv
 ```
 
-A new file `project.log` will appear in the root project folder.
+The dataset has 10 rows and 6 columns.
 
-## Command Reference
+The columns are:
 
-<details>
-<summary>Show command reference</summary>
+* `hours_studied`
+* `practice_quizzes`
+* `attendance_pct`
+* `sleep_hours`
+* `prior_score`
+* `score`
 
-### In a machine terminal (open in your `Repos` folder)
+This dataset is used to predict a student’s final score based on study habits, attendance, sleep, and prior academic performance.
 
-After you get a copy of this repo in your own GitHub account,
-open a machine terminal in your `Repos` folder:
+## Technical Modification
 
-```shell
-# Replace username with YOUR GitHub username.
-git clone https://github.com/Airfirm/ml-01-intro
+For my technical modification, I created and modified:
 
-cd ml-01-intro
-code .
+```text
+src/mlstudio/app_femi.py
 ```
 
-### In a VS Code terminal
+I also used my own copied dataset:
 
-These are listed for convenience.
-For best results, follow the detailed instructions in
-[pro-analytics-02 guide](https://denisecase.github.io/pro-analytics-02/).
+```text
+data/raw/hours_scores_femi.csv
+```
+
+My modification included:
+
+1. Changing the prediction case.
+2. Adding a new chart for `prior_score` vs `score`.
+3. Logging the technical modification in the summary.
+4. Updating the project so charts can be saved automatically to `docs/images/`.
+
+The modified prediction case used:
+
+* `hours_studied`: 8.0
+* `practice_quizzes`: 5
+* `attendance_pct`: 95
+* `sleep_hours`: 7.5
+* `prior_score`: 78
+
+The model predicted a final score of:
+
+```text
+90.7
+```
+
+## Modeling Approach
+
+This project uses supervised machine learning.
+
+I know it is supervised because the dataset includes a target column, `score`, that the model is trying to predict.
+
+This is a regression problem because the target value is numeric and continuous.
+
+The model used is:
+
+```text
+LinearRegression
+```
+
+The workflow includes:
+
+1. Loading the CSV dataset.
+2. Inspecting the data.
+3. Checking for missing values and duplicate rows.
+4. Creating a clean modeling view.
+5. Training a Linear Regression model.
+6. Evaluating model performance.
+7. Predicting one new case.
+8. Creating and saving charts.
+9. Writing results to `project.log`.
+
+## Commands Used
+
+Run the modified app from the root project folder:
 
 ```shell
-uv self update
-uv python pin 3.14
-uv lock --upgrade
-uv sync --extra dev --extra docs --upgrade
+uv run python -m mlstudio.app_femi
+```
 
-uvx pre-commit install
-uvx pre-commit autoupdate
+Run the tests:
 
-# git add all files and auto fix them as much as possible while working
-git add -A
-uvx pre-commit run --all-files
-# repeat if changes were made
-uvx pre-commit run --all-files
-
-# run the example module to verify the environment (.venv/)
-uv run python -m mlstudio.app_case
-
-# run common chores: format, lint, run checks and tests...
-uv run ruff format .
-uv run ruff check . --fix
-uv run python -m pyright
+```shell
 uv run python -m pytest
-uv run python -m zensical build
-
-# save progress after every major change (customize the commit message)
-git add -A
-git commit -m "update"
-git push -u origin main
 ```
 
-</details>
-
-## Notes
-
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
-- You do not need to add to or modify `tests/`. They are provided for example only.
-- Many files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT need to understand everything; understanding builds naturally over time.
-
-## Troubleshooting >>>
-
-If you see something like this in your terminal: `>>>` or `...`
-You accidentally started Python interactive mode.
-It happens.
-Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
-
-## Example Output (Can Remove this Section after You Verify)
+Run formatting:
 
 ```shell
-| INFO | ML | Summarize workflow........
-| INFO | ML | ========================
-| INFO | ML | SUMMARY
-| INFO | ML | ========================
-| INFO | ML | Dataset: hours_scores_case
-| INFO | ML | Original rows: 10
-| INFO | ML | Clean rows: 10
-| INFO | ML | Features: ['hours_studied', 'practice_quizzes', 'attendance_pct', 'sleep_hours', 'prior_score']
-| INFO | ML | Target: score
-| INFO | ML | ----- in a script, call plt.show() once at the end to display all charts -----
-| INFO | ML | ----- in a script, CLOSE the chart windows with the close button to CONTINUE -----
-| INFO | ML | Workflow complete
-| INFO | ML | IMPORTANT: This script creates chart windows.
-| INFO | ML | Close chart windows and terminate this process with CTRL+c as needed.
-| INFO | ML | ========================
-| INFO | ML | Executed successfully!
-| INFO | ML | ========================
+uv run ruff format .
 ```
+
+Run linting and automatic fixes:
+
+```shell
+uv run ruff check . --fix
+```
+
+Run type checking:
+
+```shell
+uv run python -m pyright
+```
+
+Build documentation:
+
+```shell
+uv run python -m zensical build
+```
+
+## Example Results
+
+When I ran my modified project, the `project.log` showed that the dataset loaded successfully.
+
+Important results included:
+
+```text
+Dataset: hours_scores_femi
+Original rows: 10
+Clean rows: 10
+Features: ['hours_studied', 'practice_quizzes', 'attendance_pct', 'sleep_hours', 'prior_score']
+Target: score
+Mean absolute error: 0.48
+R-squared: 1.00
+Predicted score: 90.7
+Technical modification: added prior score chart and changed prediction case
+Executed successfully!
+```
+
+The project found:
+
+* 10 original rows
+* 10 clean rows
+* 0 missing values
+* 0 duplicate rows
+
+The model produced:
+
+* Mean absolute error: `0.48`
+* R-squared: `1.00`
+* Predicted score for the new case: `90.7`
 
 ## Findings and Visuals
 
-Take screenshots of your charts and provide them here with a discussion.
-In Markdown, display a figure by using:
-an exclamation mark immediately followed by square brackets containing a useful caption
-immediately followed by parentheses containing the relative path to your figure.
-Note: When you start typing the path with a dot (.) for "here, in this directory",
-the IDE may help complete the path.
+The project creates and saves chart images in:
 
-In your custom project, follow this example, but
+```text
+docs/images/
+```
 
-- your figures and narrative should reflect your work,
-- this `README.md` should include your commands, process, and visuals, and
-- `docs/index.md` should include your narrative.
+### Hours Studied vs Score
 
-Remove unnecessary instructional comments in your custom files.
+![Hours Studied vs Score](./docs/images/hours_studied_vs_score_femi.png)
 
-These are from the example app used to test the .venv/.
-If possible, replace these to present interesting results from your custom project:
+This chart shows the relationship between the number of hours studied and the final score.
 
-![Provide a Useful Caption](./docs/images/Figure_1.png)
+### Prior Score vs Final Score
 
-![Provide a Useful Caption](./docs/images/Figure_2.png)
+![Prior Score vs Final Score](./docs/images/prior_score_vs_score_femi.png)
 
-## Project Documentation
+This chart shows the relationship between a student’s prior score and final score.
 
-Additional project instructions, terms, and notes:
+### Model Coefficients
 
-[docs/index.md](docs/index.md)
+![Model Coefficients](./docs/images/model_coefficients_femi.png)
 
-## Citation
+This chart shows how each feature contributed to the Linear Regression model.
 
-[CITATION.cff](./CITATION.cff)
+## Project Log
+
+A `project.log` file appears in the root project folder after running the app.
+
+The log provides evidence that the project ran successfully.
+It records the dataset name, number of rows and columns, missing values, duplicate count, model metrics, prediction result, and workflow completion message.
+
+## Reflection
+
+This project helped me understand how a supervised regression workflow is organized in Python. I learned how the `main()` function controls the project workflow by calling each smaller function in order.
+
+The hardest part was understanding how the app file, dataset file, charts, and log file all connect.
+I addressed this by reviewing the example code, making one change at a time, running the project from the terminal, and checking the `project.log`.
+
+This type of workflow could be applied to many real-world prediction problems, such as:
+
+* predicting house prices
+* predicting student grades
+* predicting sales totals
+* predicting customer spending
+* predicting employee performance
+
+## Testing
+
+The project includes a smoke test:
+
+```text
+tests/test_app_femi.py
+```
+
+The test verifies that `app_femi.py` has a callable `main()` function.
+
+To run the test:
+
+```shell
+uv run python -m pytest
+```
 
 ## License
 
-[MIT](./LICENSE)
+See the project `LICENSE` file.
